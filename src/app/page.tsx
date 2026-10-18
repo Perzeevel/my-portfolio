@@ -55,8 +55,18 @@ export default function Home() {
 
       <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
         
-<a href="#" className="text-lg font-bold tracking-tight">
-  Shwe Linn Htun<span className="text-lime-300">.</span>
+      <a
+  href="#"
+  aria-label="Shwe Linn Htun — Home"
+  className="name-signature group text-sm font-bold uppercase tracking-[0.18em] sm:text-base"
+>
+  <span className="name-signature-text">Shwe Linn Htun</span>
+  <span
+    aria-hidden="true"
+    className="ml-1 inline-block text-lime-300 transition-transform duration-300 group-hover:translate-x-1"
+  >
+    
+  </span>
 </a>
 
 
@@ -91,12 +101,12 @@ export default function Home() {
             Developer · Builder · Problem Solver
           </p>
 
-          <h1 className="max-w-4xl text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl lg:text-8xl">
-            Turning ideas into{" "}
-            <span className="bg-gradient-to-r from-lime-200 via-lime-300 to-emerald-400 bg-clip-text text-transparent">
-              digital reality.
-            </span>
-          </h1>
+          <h1 className="hero-reveal max-w-4xl text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl lg:text-8xl">
+  <span className="hero-line block">Turning ideas into</span>
+  <span className="hero-highlight mt-2 block">
+    digital reality.
+  </span>
+</h1>
 
           <p className="mt-8 max-w-xl text-base leading-8 text-zinc-400 sm:text-lg">
             I build modern web applications and thoughtful digital

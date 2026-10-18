@@ -24,3 +24,122 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* Premium futuristic name signature */
+.name-signature {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+}
+
+.name-signature-text {
+  color: #f4f4f5;
+  transition:
+    color 300ms ease,
+    text-shadow 300ms ease;
+}
+
+.name-signature:hover .name-signature-text {
+  color: #d9f99d;
+  text-shadow: 0 0 18px rgb(190 242 100 / 22%);
+}
+
+/* Cinematic hero entrance */
+.hero-reveal {
+  animation: hero-enter 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-line {
+  animation: hero-line-enter 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-highlight {
+  width: fit-content;
+  max-width: 100%;
+  padding-bottom: 0.08em;
+  background: linear-gradient(
+    100deg,
+    #d9f99d 0%,
+    #a3e635 25%,
+    #f7fee7 48%,
+    #84cc16 65%,
+    #d9f99d 100%
+  );
+  background-size: 220% 100%;
+  background-position: 100% 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:
+    hero-line-enter 950ms 140ms cubic-bezier(0.22, 1, 0.36, 1) both,
+    hero-shimmer 8s 1.2s ease-in-out infinite;
+}
+
+/* Subtle movement instead of a distracting bounce */
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-line-enter {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes hero-shimmer {
+  0%,
+  100% {
+    background-position: 100% 50%;
+  }
+
+  50% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Keyboard accessibility */
+.name-signature:focus-visible {
+  outline: 2px solid #bef264;
+  outline-offset: 6px;
+  border-radius: 3px;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal,
+  .hero-line,
+  .hero-highlight {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .hero-highlight {
+    background-position: 50% 50%;
+  }
+
+  .name-signature-text,
+  .name-signature > span {
+    transition: none;
+  }
+}
+
