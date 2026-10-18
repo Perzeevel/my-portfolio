@@ -240,6 +240,44 @@ export default function Home() {
                   <p className="mt-4 leading-7 text-zinc-400">
                     {project.description}
                   </p>
+
+                  
+{project.number === "01" && (
+  <div className="mt-6 grid grid-cols-2 gap-3">
+    {[
+      {
+        src: "/projects/cvforge/cvforge-builder.png",
+        alt: "CVForge CV builder",
+      },
+      {
+        src: "/projects/cvforge/cvforge-templates.png",
+        alt: "CVForge templates",
+      },
+      {
+        src: "/projects/cvforge/cvforge-ats-ai.png",
+        alt: "CVForge ATS analysis",
+      },
+      {
+        src: "/projects/cvforge/cvforge-cv-manager.png",
+        alt: "CVForge CV manager",
+      },
+    ].map((screenshot) => (
+      <div
+        key={screenshot.src}
+        className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-[#101310]"
+      >
+        <Image
+          src={screenshot.src}
+          alt={screenshot.alt}
+          fill
+          sizes="(max-width: 768px) 50vw, 25vw"
+          className="object-cover object-top transition duration-300 hover:scale-105"
+        />
+      </div>
+    ))}
+  </div>
+)}
+
                   
 <div className="mt-6 flex flex-wrap gap-2">
   {project.stack.map((item) => (
