@@ -409,6 +409,14 @@ export default function Home() {
 
           </p>
           <div className="flex items-center gap-5 text-zinc-500">
+
+          <a
+                  href="viber://chat?number=%2B959973689080"
+                  className="inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-500/10 px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-lime-300/50 hover:bg-lime-300/10 hover:shadow-[0_0_24px_rgba(190,242,100,0.12)]"
+                >
+                  <span className="font-bold text-violet-300">V</span>
+                  Chat with me on Viber
+                </a>
             
             <a
               href="https://github.com/Perzeevel"
@@ -419,6 +427,10 @@ export default function Home() {
             >
               <Code2 size={19} />
             </a>
+
+            
+                
+
 
             <a
               href="https://www.linkedin.com/"
@@ -434,6 +446,8 @@ export default function Home() {
               aria-label="Email"
               className="transition hover:text-lime-300"
             >
+
+
               <Mail size={19} />
             </a>
           </div>
