@@ -196,26 +196,39 @@ export default function Home() {
                 key={project.number}
                 className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] transition duration-300 hover:-translate-y-1 hover:border-lime-300/30"
               >
-                <div
-                  className={`relative flex h-64 items-center justify-center overflow-hidden bg-gradient-to-br ${project.color}`}
-                >
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:32px_32px]" />
-                  <div className="relative rounded-2xl border border-white/15 bg-[#0b0d0b]/90 px-8 py-7 shadow-2xl transition duration-500 group-hover:scale-105">
-                    <p className="text-xs tracking-[0.25em] text-zinc-500">
-                      PROJECT {project.number}
-                    </p>
-                    <p className="mt-3 text-3xl font-bold tracking-tight">
-                      {project.name}
-                      <span className="text-lime-300">.</span>
-                    </p>
-                    <p className="mt-2 text-xs text-zinc-500">
-                      Built for real-world use
-                    </p>
-                  </div>
-                  <span className="absolute right-5 top-5 text-sm text-white/40">
-                    {project.number}
-                  </span>
-                </div>
+                
+<div className="relative h-64 overflow-hidden bg-[#101310]">
+  {project.number === "01" ? (
+    <Image
+      src="/projects/cvforge/cvforge-landing.png"
+      alt="CVForge landing page"
+      fill
+      sizes="(max-width: 768px) 100vw, 50vw"
+      className="object-cover object-top transition duration-500 group-hover:scale-105"
+    />
+  ) : (
+    <div
+      className={`flex h-full items-center justify-center bg-gradient-to-br ${project.color}`}
+    >
+      <div className="rounded-2xl border border-white/15 bg-[#0b0d0b]/90 px-8 py-7">
+        <p className="text-xs tracking-[0.25em] text-zinc-500">
+          PROJECT {project.number}
+        </p>
+        <p className="mt-3 text-3xl font-bold tracking-tight">
+          {project.name}
+          <span className="text-lime-300">.</span>
+        </p>
+        <p className="mt-2 text-xs text-zinc-500">
+          Built for real-world use
+        </p>
+      </div>
+    </div>
+  )}
+  <span className="absolute right-5 top-5 rounded-full bg-black/70 px-3 py-1 text-sm text-white/80">
+    {project.number}
+  </span>
+</div>
+
 
                 <div className="p-7 sm:p-8">
                   <p className="text-xs font-medium tracking-[0.2em] text-lime-300">
